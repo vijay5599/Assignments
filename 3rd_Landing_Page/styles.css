@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#toggle,
+.navbar label {
+  display: none;
+}
+
+.container-2 a {
+  flex-direction: column;
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
+  text-decoration: none;
+  color: #ddd;
+  font-size: 0.8rem;
+}
+.container-2 span {
+  margin: 40px 40px;
+}
+/* Keyframes animation for shaking effect */
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5px, 0);
+  }
+  20% {
+    transform: translate(5px, 0);
+  }
+  30% {
+    transform: translate(-5px, 0);
+  }
+  40% {
+    transform: translate(5px, 0);
+  }
+  50% {
+    transform: translate(-5px, 0);
+  }
+  60% {
+    transform: translate(5px, 0);
+  }
+  70% {
+    transform: translate(-5px, 0);
+  }
+  80% {
+    transform: translate(5px, 0);
+  }
+  90% {
+    transform: translate(-5px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes circularRotation {
+  0% {
+    transform: rotateY(36deg) rotateX(360deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+
+.shaking-image {
+  animation: shake 6s infinite;
+}
+
+.bg_img {
+  animation: circularRotation 2s ease-in-out;
+  transform-origin: center center;
+}
+
+.left-case {
+  transition: transform 0.3s;
+}
+.left-case:hover {
+  animation: shake 0.8s 0.1;
+  transition: none;
+}
+
+.right-case {
+  transition: transform 0.3s;
+}
+.right-case:hover {
+  animation: shake 0.8s 0.1;
+  transition: none;
+}
+
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    width: 100%;
+  }
+  .menu {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+  }
+  .list {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .navbar label {
+    display: inherit;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #toggle:checked-.menu {
+    max-height: 100%;
+  }
+  .navbar {
+    padding: 0;
+  }
+  .logo {
+    margin-left: 0;
+  }
+  #menu {
+    display: block;
+    width: 100%;
+  }
+
+  .container-1 {
+    width: 100%;
+  }
+  .container-2 {
+    display: none;
+  }
+  .bg_img {
+    width: 450px;
+  }
+  .frbg_img {
+    width: 450px;
+  }
+
+  #low-end {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    overflow: hidden;
+  }
+}
